@@ -26,7 +26,7 @@
  * Math class: https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_math.htm
  * Classes: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_understanding.htm
  *
- * @author Your Name
+ * @author Collin LaFon
  */
 
 public with sharing class ClassesObjectsMethods {
@@ -40,17 +40,24 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<String> practiceStringMethods() {
         // Initialize a String with 'Hello, Salesforce!'
-        
-        // Get the length of the String        
+        String helloSalesforce = 'Hello, Salesforce!';
+        // Get the length of the String
+        Integer strlength = helloSalesforce.length();
         // Get a substring of the String of the first 5 characters
+        String substring = helloSalesforce.substring(0, 5);
         // Convert the String to lower case
+        String lowerCase = helloSalesforce.toLowerCase();
         
         // Return the list with the string data
+        List<String> results = new List<String>();
         // In the first position add the string length
+        results.add(String.valueOf(strlength));
         // In the second position add the substring
+        results.add(substring);
         // In the third position add the string in lower case
+        results.add((lowerCase));
 
-        return null; // Replace null with the variable you used to store the result
+        return results; 
     }
 
     /**
@@ -62,14 +69,30 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Boolean> checkStringContent(String input) {
         // Initialize a list to store the results
+        List<Boolean> results = new List<Boolean>();
         
         // Check if the string starts with 'Sales'
+        if (input.startsWith('Sales')){
+            results.add(true);
+        } else {
+            results.add(false);
+        }
         
         // Check if the string ends with 'Force'
-        
+        if (input.endsWith('Force')){
+            results.add(true);
+        } else {
+            results.add(false);
+        }
+
         // Check if the string contains 'Awesome'
-        
-        return null; // Replace null with the variable you used to store the result
+        if (input.contains('Awesome')){
+            results.add(true);
+        } else {
+            results.add(false);
+        }
+
+        return results;
     }
 
     /**
